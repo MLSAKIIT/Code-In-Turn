@@ -23,6 +23,7 @@
                 width: 40%;
                 position: relative;
                 top: 15vh;
+                bottom: 15vh;
                 border-radius: 1vmax;
             }
 
@@ -45,9 +46,50 @@
             }
 
             input[type=text] {
-                border: 0.1vmax solid #3f3e3e;
-
+                border: 0.15vmax solid #888888 !important;
+                border-radius: 1vmax !important;
+                font-family: 'Poppins', sans-serif;
+                font-size: 1.5vmax !important;
             }
+
+            label {
+                text-align: left !important;
+            }
+
+            h1 {
+                overflow: hidden;
+                text-align: center;
+                font-size: 1.5vmax;
+                margin: 0.8rem 0 0.68rem;
+                }
+
+                h1:before,
+                h1:after {
+                background-color: #000;
+                content: "";
+                display: inline-block;
+                height: 1px;
+                position: relative;
+                vertical-align: middle;
+                width: 50%;
+                }
+
+                h1:before {
+                right: 0.5em;
+                margin-left: -50%;
+                }
+
+                h1:after {
+                left: 0.5em;
+                margin-right: -50%;
+                }
+                
+
+                @media only screen and (max-width: 720px) {
+                    .center{
+                        width: 80%;
+                    }
+                }
         </style>
 
         <div class="card center">
@@ -61,7 +103,7 @@
             <div class="card-content grey lighten-4">
             <section id="user">
                 <button class="google"> <i class="fab fa-google"></i> LOGIN WITH GOOGLE</button>
-                <hr/>
+                <h1>OR</h1>
                 <form>
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name">
