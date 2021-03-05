@@ -1,0 +1,24 @@
+{
+  "name": "code-in-turn",
+  "version": "1.0.0",
+  "description": "MSAC CODING EVENT (APRIL 3rd)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MSAC-KIIT/Code-in-turn.git"
+  },
+  "author": "MSAC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MSAC-KIIT/Code-in-turn/issues"
+  },
+  "homepage": "https://github.com/MSAC-KIIT/Code-in-turn#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.18"
+  }
+}
