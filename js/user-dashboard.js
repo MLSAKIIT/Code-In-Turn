@@ -11,7 +11,7 @@ app.get("/user-dashboard", (req, res) => {
   //////////////////////////////////////////
 
   if (!req.isAuthenticated) {
-    res.render("not_found.ejs");
+    res.render("not_found.ejs");    
   } else {
     // Now, we have user-email as the current unique identiifer. So, it will be used to fetch all the user data from  MONGO DB.
     User.findOne({ email: req.user.email }).then((doc) => {
@@ -125,3 +125,4 @@ app.post("/editprofile", (req, res) => {
     );
   }
 });
+  
