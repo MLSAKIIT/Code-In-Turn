@@ -110,7 +110,7 @@
             <section id="user">
                 <button class="google"> <i class="fab fa-google"></i> LOGIN WITH GOOGLE</button>
                 <h1>OR</h1>
-                <form id="reg-form" action="">
+                <form id="reg-form" action="" method="POST">
                     <label for="username">Name</label>
                     <input type="text" id="username" name="name">
                     <label for="email">Email</label>
@@ -119,10 +119,12 @@
                     <input type="text" id="password" name="password">
                     <!-- <label for="phone">Phone Number</label>
                     <input type="text" id="phone" name="phone"> -->
+                    <a href="#resetpw">Forgot password?</a><br />
+                    <button class="register" type="submit">REGISTER</button>
                 </form>
 
-                <a href="#resetpw">Forgot password?</a><br />
-                <button class="register" type="submit">REGISTER</button>
+              
+             
 
                 <p>Already Registered? <a href="#login">Register here</a></p>
             </section>
@@ -157,6 +159,7 @@
             form.addEventListener('submit', registerUser);
 
             async function registerUser(event) {
+                console.log("JAI SHREE");
                 event.preventDefault();
                 const username = document.getElementById('username').value;
                 const password = document.getElementById('password').value;
@@ -167,10 +170,10 @@
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({
+                    body: JSON.stringify({username:
                         username,
-                        password,
-                        email
+                        password:password,
+                       email: email
                     })
                 }).then(res => res.json());
                 console.log(result);
