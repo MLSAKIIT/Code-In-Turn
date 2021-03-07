@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<body>
+   
+    <button id="update_button" >SUBMIT UPDATE</button>
+
+    <script>
+
+        console.log("BUTTON PRESS");
+     
+    const button = document.getElementById('update_button');
+  
+    button.addEventListener('click', registerUser);
+
+    async function registerUser(event) {
+     
+        event.preventDefault();
+        // const username = document.getElementById('username').value;
+        // const password = document.getElementById('password').value;
+        // const email = document.getElementById('email').value;
+        
+    
+        const result = await fetch('/editprofile', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({username: "NEW USER", email:"<%=user.email %>" , bio:"<%=user.bio %>"})
+        }).then(res => res.json());
+        console.log(result);
+        if (result.status === 'ok') {
+            //ALl OK.
+            alert(result.data);
+        }
+        else {
+            alert(result.error);
+        }
+    }
+
+    </script>
+    
+</body>
+
+
+

@@ -4,9 +4,6 @@ const path = require('path');
 const bcrypt = require('bcryptjs');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const jwt = require('jsonwebtoken')
-
-const JWT_SECRET = 'sdjkfh8923yhjdksbfma@#*(&@*!^#&@bhjb2qiuhesdbhjdsfg839ujkdhfjk'
 
 //PORT
 const PORT = process.env.PORT || 3000;
@@ -34,11 +31,6 @@ app.use(bodyParser.json()); //Middleware for express.
 app.get('/', (req, res) => {
     res.render('index');
 })
-app.get('/register', (req, res) => {
-    res.render('register');
-})
-app.get('/login', (req, res) => {
-    res.render('login');
 })
 
 app.post('/api/login', async(req, res) => {
@@ -102,9 +94,4 @@ app.post('/register', async(req, res) => {
     }
 
     res.json({ status: 'ok' });
-})
-
-
-app.listen(PORT, (req, res) => {
-    console.log(`Server is live on PORT : ${PORT}....`);
 })

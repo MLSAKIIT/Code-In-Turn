@@ -6,7 +6,6 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -29,7 +28,6 @@
             bottom: 15vh;
             border-radius: 1vmax;
         }
-        
         button {
             padding: 1vh 0.5vw;
             border: 0.1vmax solid #3f3e3e;
@@ -48,25 +46,18 @@
             color: #1c37ad;
             font-size: 1.5vmax;
         }
-        
         input[type=text] {
             border: 0.15vmax solid #888888 !important;
             border-radius: 1vmax !important;
             font-family: 'Poppins', sans-serif;
             font-size: 1.5vmax !important;
         }
-        
-        label {
-            text-align: left !important;
-        }
-        
         h1 {
             overflow: hidden;
             text-align: center;
             font-size: 1.5vmax;
             margin: 0.8rem 0 0.68rem;
         }
-        
         h1:before,
         h1:after {
             background-color: #000;
@@ -77,17 +68,14 @@
             vertical-align: middle;
             width: 50%;
         }
-        
         h1:before {
             right: 0.5em;
             margin-left: -50%;
         }
-        
         h1:after {
             left: 0.5em;
             margin-right: -50%;
         }
-        
         @media only screen and (max-width: 720px) {
             .center {
                 width: 80%;
@@ -108,21 +96,16 @@
                 <button class="google"> <i class="fab fa-google"></i> LOGIN WITH GOOGLE</button>
                 <h1>OR</h1>
                 <form id="reg-form" action="" method="POST">
-                    <label for="name">Name</label>
                     <input type="text" id="username" name="name">
                     <label for="email">Email</label>
                     <input type="text" id="email" name="email">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password">
                     <!-- <label for="phone">Phone Number</label>
                     <input type="text" id="phone" name="phone"> -->
                     <a href="#resetpw">Forgot password?</a><br />
                     <button class="register" type="submit">REGISTER</button>
                 </form>
-
-
-
-
+                
                 <p>Already Registered? <a href="#login">Register here</a></p>
             </section>
 
@@ -152,9 +135,6 @@
         <!-- Script to Send back Data to the Server -->
         <script>
             const form = document.getElementById('reg-form');
-            form.addEventListener('submit', registerUser);
-
-            async function registerUser(event) {
                 event.preventDefault();
                 const username = document.getElementById('username').value;
                 const password = document.getElementById('password').value;
@@ -165,17 +145,12 @@
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({
-                        username: username,
-                        password: password,
-                        email: email
                     })
                 }).then(res => res.json());
                 console.log(result);
                 if (result.status === 'ok') {
                     //ALl OK.
                     alert(result.data);
-                } else {
                     alert(result.error);
                 }
             }
